@@ -6,10 +6,10 @@ COPY . .
 
 RUN npm install
 
-RUN npm install -g increase-memory-limit
+RUN npm install -g serve
 
-RUN increase-memory-limit
+RUN npm run build
 
-EXPOSE 8212
+EXPOSE 3000
 
-CMD ["npm", "start","--port","8212"]
+CMD ["serve", "-s","build"]
